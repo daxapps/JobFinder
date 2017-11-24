@@ -28,6 +28,7 @@ const doFacebookLogin = async dispatch => {
 		return dispatch({ type: FACEBOOK_LOGIN_FAIL });
 	}
 
+	// save token to device
 	await AsyncStorage.setItem('fb_token', token);
 	dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token });
 };
